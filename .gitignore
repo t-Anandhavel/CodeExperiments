@@ -2,8 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/C#/Learning Path/obj
-/C#/To-Do List/bin/Debug/net8.0
-/C#/To-Do List/obj
+/C#/bin/
+/C#/obj/
 /C#/.vs
-/C#/Simple Calculator/obj
