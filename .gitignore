@@ -2,6 +2,11 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/C#/bin/
-/C#/obj/
-/C#/.vs
+# Ignore bin, obj, and .vs folders
+**/bin/
+**/obj/
+**/.vs/
+
+# Ignore Debug and Release folders
+**/debug/
+**/release/
