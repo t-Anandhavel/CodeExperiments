@@ -1,0 +1,49 @@
+{
+    "formFields": [
+      {
+        "label": "First Name",
+        "type": "text",
+        "name": "firstName",
+        "required": true,
+        "defaultValue": "John",
+        "readOnly": true
+      },
+      {
+        "label": "Last Name",
+        "type": "text",
+        "name": "lastName",
+        "required": true,
+        "defaultValue": "Smith",
+        "readOnly": true
+      },
+      {
+        "label": "Date of Birth",
+        "type": "text",
+        "name": "dob",
+        "required": true,
+        "defaultValue": "12/11/1983",
+        "readOnly": true
+      },
+      {
+        "label": "Do you have a reserved name?",
+        "type": "checkbox",
+        "name": "reservedName"
+      },
+      {
+        "label": "Do you have a valid Jamaican Tax Registration Number (TRN)?",
+        "type": "checkbox",
+        "name": "trn"
+      },
+      {
+        "label": "Do you have a valid Jamaican Driving License?",
+        "type": "checkbox",
+        "name": "drivingLicense"
+      },
+      {
+        "label": "Is this sole Trader/Proprietor?",
+        "type": "checkbox",
+        "name": "soleTrader"
+      }
+    ]
+  }
+  

@@ -11,6 +11,8 @@ import ListFromProps from "./Components/ListFromProps";
 import { ToastContainer, toast } from "react-toastify";
 import { Alert } from "./Components/Alert";
 import { ReusableBootstrapButton } from "./Components/ResuableBootstrapButton";
+import EasyRegistrationTabs from "./Components/EasyRegistration";
+import FormFromConfig from "./Components/FormUsingConfig/FormFromConfig";
 
 function App() {
   const items = [
@@ -49,6 +51,9 @@ function App() {
           OnSelectItem={handleItemClick}
         />
       </div>
+
+      <FormFromConfig />
+
       <Alert onClose={() => console.info("Alert's Close Button Clicked")}>
         Hello <span>World</span>
         <h3>!!</h3>
@@ -58,6 +63,10 @@ function App() {
       <ReusableBootstrapButton color="secondary">
         MY Re-usable Button
       </ReusableBootstrapButton>
+
+      <div className="container">
+        <EasyRegistrationTabs />
+      </div>
     </div>
   );
 }
