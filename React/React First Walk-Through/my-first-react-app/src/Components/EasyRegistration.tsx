@@ -1,97 +1,90 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faMapPin,
-  faCodeBranch,
-  faUsers,
-  faInfoCircle,
-  faIdCard,
-  faExclamationCircle,
-} from "@fortawesome/free-solid-svg-icons";
-import ProgressBar from "./ProgressBar";
-import { ProgressBar as BootstrapProgressBar } from "react-bootstrap";
+import { useState } from "react";
+import ProgressBar from "react-bootstrap/ProgressBar";
+import NameandAddress from "./EZRegistrationComponents/NameandAddress";
+import BusinessOwners from "./EZRegistrationComponents/BusinessOwners";
+import OtherInformation from "./EZRegistrationComponents/OtherInformation";
+import FilingInformation from "./EZRegistrationComponents/FilingInformation";
 
-const tabs = [
-  { id: "tab1", name: "Name and Address", icon: faMapPin },
-  { id: "tab2", name: "Business Branches", icon: faCodeBranch },
-  { id: "tab3", name: "Business Owners", icon: faUsers },
-  { id: "tab4", name: "Other Information", icon: faInfoCircle },
-  { id: "tab5", name: "Filing Information", icon: faIdCard },
+const tabData = [
+  { id: "tab1", name: "Name and Address", progress: 0, error: false },
+  { id: "tab2", name: "Business Branches", progress: 0, error: false },
+  { id: "tab3", name: "Business Owners", progress: 0, error: false },
+  { id: "tab4", name: "Other Information", progress: 0, error: false },
+  { id: "tab5", name: "Filing Information", progress: 0, error: false },
 ];
 
-const EasyRegistrationTabs: React.FC = () => {
-  const [activeTab, setActiveTab] = useState("tab1");
-  const completionPercentages = {
-    tab1: 90,
-    tab2: 75,
-    tab3: 60,
-    tab4: 40,
-    tab5: 100,
+// Define the type for tab state
+type TabState = {
+  id: string;
+  name: string;
+  progress: number;
+  error: boolean;
+  errorMessage?: string;
+};
+
+const RegistrationForm = () => {
+  const [tabs, setTabs] = useState<TabState[]>(tabData);
+  const [activeTab, setActiveTab] = useState<string>(tabs[0].id);
+
+  // Function to update progress or errors dynamically
+  const updateTabState = (tabId: string, newState: Partial<TabState>) => {
+    setTabs((prevTabs) =>
+      prevTabs.map((tab) => (tab.id === tabId ? { ...tab, ...newState } : tab))
+    );
   };
 
   return (
-    <div className="my-5">
-      <ul className="nav nav-tabs">
-        {tabs.map((tab) => (
-          <li className="nav-item" key={tab.id}>
-            <button
-              className={`nav-link ${activeTab === tab.id ? "active" : ""}`}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {completionPercentages[
-                tab.id as keyof typeof completionPercentages
-              ] < 100 && (
-                <FontAwesomeIcon
-                  icon={faExclamationCircle}
-                  className="text-danger me-1"
-                />
-              )}
-              <FontAwesomeIcon icon={tab.icon} className="me-1" />
-              {tab.name}
-              <BootstrapProgressBar
-                now={
-                  completionPercentages[
-                    tab.id as keyof typeof completionPercentages
-                  ]
-                }
-                label={`${
-                  completionPercentages[
-                    tab.id as keyof typeof completionPercentages
-                  ]
-                }%`}
-                variant="info"
-                animated
-              />
-            </button>
-          </li>
-        ))}
-      </ul>
-
-      <div className="tab-content border p-3">
+    <div>
+      {/* Progress Bars */}
+      <div className="nav nav-tabs">
         {tabs.map((tab) => (
           <div
             key={tab.id}
-            className={`tab-pane fade ${
-              activeTab === tab.id ? "show active" : ""
+            className={`nav-link col mb-3 ${
+              activeTab === tab.id ? "active" : ""
             }`}
+            onClick={() => setActiveTab(tab.id)}
+            style={{ cursor: "pointer" }}
           >
-            <h3>{tab.name}</h3>
-            <ProgressBar
-              name={tab.name}
-              value={
-                completionPercentages[
-                  tab.id as keyof typeof completionPercentages
-                ]
-              }
-            />
-            <p>Content for {tab.name} goes here.</p>
+            <span>{tab.name}</span>
+            <ProgressBar now={tab.progress} label={`${tab.progress}%`} />
           </div>
         ))}
+      </div>
+
+      {/* Tab Content */}
+      <div className="tab-content">
+        {activeTab === "tab1" && (
+          <NameandAddress
+            updateProgress={(_id: string, p: number) =>
+              updateTabState("tab1", { progress: p })
+            }
+          />
+        )}
+        {activeTab === "tab3" && (
+          <BusinessOwners
+            updateProgress={(_id: string, p: number) =>
+              updateTabState("tab3", { progress: p })
+            }
+          />
+        )}
+        {activeTab === "tab4" && (
+          <OtherInformation
+            updateProgress={(_id: string, p: number) =>
+              updateTabState("tab4", { progress: p })
+            }
+          />
+        )}
+        {activeTab === "tab5" && (
+          <FilingInformation
+            updateProgress={(_id: string, p: number) =>
+              updateTabState("tab5", { progress: p })
+            }
+          />
+        )}
       </div>
     </div>
   );
 };
 
-export default EasyRegistrationTabs;
-
-// .replace(/\s/g, "")
+export default RegistrationForm;
