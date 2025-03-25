@@ -1,4 +1,10 @@
-body{
-    background-color: beige !important;
-    padding: 5rem 7rem;
+body {
+  background-color: beige !important;
+  padding: 5rem 7rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: center;
 }
