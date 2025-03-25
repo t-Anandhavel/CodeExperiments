@@ -13,6 +13,8 @@ import { Alert } from "./Components/Alert";
 import { ReusableBootstrapButton } from "./Components/ResuableBootstrapButton";
 import EasyRegistrationTabs from "./Components/EasyRegistration";
 import FormFromConfig from "./Components/FormUsingConfig/FormFromConfig";
+import DataFromStore from "./Components/DataFromStore";
+// import MyComponent from "./Components/AuthTry";
 
 function App() {
   const items = [
@@ -32,42 +34,49 @@ function App() {
   }
 
   return (
-    <div className="text-primary mt-4">
-      <center>
-        <Message />
-      </center>
-      <div className="row">
-        <ListGroup />
-        <ListGroupFromList />
-      </div>
-      <div className="row">
-        <ConditionalListGroup />
-        <StateManagementInList />
-      </div>
-      <div className="row">
-        <ListFromProps
-          Items={items}
-          Heading="Heading and Items parsed from props"
-          OnSelectItem={handleItemClick}
-        />
-      </div>
+    <>
+    {/* <MyComponent/> */}
+      <div className="text-primary mt-4">
+        <center>
+          <Message />
+        </center>
+        <div className="row">
+          <ListGroup />
+          <ListGroupFromList />
+        </div>
+        <div className="row">
+          <ConditionalListGroup />
+          <StateManagementInList />
+        </div>
+        <div className="row">
+          <ListFromProps
+            Items={items}
+            Heading="Heading and Items parsed from props"
+            OnSelectItem={handleItemClick}
+          />
+        </div>
 
-      <FormFromConfig />
+        <FormFromConfig />
 
-      <Alert onClose={() => console.info("Alert's Close Button Clicked")}>
-        Hello <span>World</span>
-        <h3>!!</h3>
-      </Alert>
-      <ToastContainer />
-      <RegistrationPage />
-      <ReusableBootstrapButton color="secondary">
-        MY Re-usable Button
-      </ReusableBootstrapButton>
+        <Alert onClose={() => console.info("Alert's Close Button Clicked")}>
+          Hello <span>World</span>
+          <h3>!!</h3>
+        </Alert>
+        <ToastContainer />
+        <RegistrationPage />
+        <ReusableBootstrapButton color="secondary">
+          MY Re-usable Button
+        </ReusableBootstrapButton>
+
+        <div className="container">
+          <EasyRegistrationTabs />
+        </div>
+      </div>
 
       <div className="container">
-        <EasyRegistrationTabs />
+        <DataFromStore />
       </div>
-    </div>
+    </>
   );
 }
 
