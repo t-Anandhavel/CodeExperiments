@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Experimental.Pages.AbsoluteLayoutDemo"
+             Title="AbsoluteLayoutDemo">
+    <AbsoluteLayout>
+        <Button Text="Absolute Button 1" AbsoluteLayout.LayoutBounds="0,0,200,50" />
+        <Button Text="Absolute Button 2" AbsoluteLayout.LayoutBounds="10,60,200,50" />
+        <Button Text="Height Proportional" AbsoluteLayout.LayoutBounds="100,180,260,.2" AbsoluteLayout.LayoutFlags="HeightProportional" />
+        <Button Text="Width Proportional" AbsoluteLayout.LayoutBounds="150,120,.5,50" AbsoluteLayout.LayoutFlags="WidthProportional" />
+        <Button Text="SIZE Proportional" AbsoluteLayout.LayoutBounds="120,590,.6,.2" AbsoluteLayout.LayoutFlags="SizeProportional" />
+        <Button Text="X Proportional" AbsoluteLayout.LayoutBounds=".3,340,200,100" AbsoluteLayout.LayoutFlags="XProportional" />
+        <Button Text="Y Proportional" AbsoluteLayout.LayoutBounds="150,.7,200,100" AbsoluteLayout.LayoutFlags="YProportional" />
+        
+    </AbsoluteLayout>
+</ContentPage>

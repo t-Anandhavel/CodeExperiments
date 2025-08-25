@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Experimental.Pages.FormPage"
+             Title="FormPage">
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="5">
+            <Entry x:Name="NameEntry" 
+                   Placeholder="Enter your name" 
+                   FontSize="18" 
+                   Margin="10" 
+                   MaxLength="15"
+                   HorizontalOptions="FillAndExpand"/>
+
+            <Editor x:Name="DescriptionEditor" 
+                    Placeholder="Enter a description" 
+                    FontSize="18" 
+                    Margin="10" 
+                    HeightRequest="100"
+                    HorizontalOptions="FillAndExpand"/>
+
+            <HorizontalStackLayout Spacing="10">
+                <CheckBox />
+                <Label Text="Checkbox Label" VerticalTextAlignment="Center" />
+            </HorizontalStackLayout>
+
+            <Frame BorderColor="Gray" CornerRadius="10" Padding="10">
+                <VerticalStackLayout>
+                    <RadioButton Content="Option 1" GroupName="Group1" />
+                    <RadioButton Content="Option 2" GroupName="Group1" />
+                    <RadioButton Content="Option 3" GroupName="Group1" />
+                    <RadioButton Content="Option 4" GroupName="Group1" />
+                    <RadioButton Content="Option 5" GroupName="Group1" />
+                </VerticalStackLayout>
+            </Frame>
+
+            <Grid ColumnDefinitions="*,3*" Padding="10" VerticalOptions="Center">
+                <Label Text="1" x:Name="sliderlabel" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" />
+                <Slider x:Name="slider" Minimum="1" Maximum="10" ValueChanged="slider_ValueChanged" VerticalOptions="Center" Grid.Column="1" />
+            </Grid>
+
+            <Grid ColumnDefinitions="*,3*" Padding="10" VerticalOptions="Center">
+                <Label Text="2" x:Name="stepperlabel" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" />
+                <Stepper x:Name="stepper" Minimum="2" Maximum="20" Increment="2" ValueChanged="stepper_ValueChanged" VerticalOptions="Center" Grid.Column="1" />
+            </Grid>
+
+            <Grid ColumnDefinitions="*,3*" Padding="10" VerticalOptions="Center">
+                <Switch HorizontalOptions="Center" VerticalOptions="Center"/>
+                <Label Text="Above 18" x:Name="switchlabel" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" Grid.Column="1" />
+            </Grid>
+
+            <DatePicker/>
+            <TimePicker />
+
+            <Grid ColumnDefinitions="*,3*" Padding="10" VerticalOptions="Center">
+                <Switch x:Name="ActivityIndicatorSwitch" Toggled="ActivityIndicatorSwitch_Toggled" />
+                <ActivityIndicator x:Name="ActivityIndator" IsRunning="False" Grid.Column="1" />
+            </Grid>
+
+            <!--<Grid ColumnDefinitions="*,3*" Padding="10" VerticalOptions="Center">
+                <Label Text="" x:Name="" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" />
+            </Grid>
+            
+            <Grid ColumnDefinitions="*,3*" Padding="10" VerticalOptions="Center">
+                <Label Text="" x:Name="" FontAttributes="Bold" FontSize="Large" VerticalTextAlignment="Center" />
+            </Grid>-->
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

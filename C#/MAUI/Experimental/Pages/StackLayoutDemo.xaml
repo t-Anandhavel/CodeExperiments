@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Experimental.Pages.StackLayoutDemo"
+             Title="Stack Layout Demo" BackgroundColor="SeaGreen">
+    <ScrollView>
+        <StackLayout Padding="15"
+             Spacing="15"
+             Orientation="Vertical"
+                 VerticalOptions="Center"                 
+             Background="Red">
+            <Label Text="MAUI Layouts" TextColor="Azure" FontSize="25" HorizontalTextAlignment="Center" FontAttributes="Bold" />
+
+            <Frame Padding="0" CornerRadius="20" BorderColor="Gray" BackgroundColor="White" HasShadow="True">
+            <SearchBar 
+    x:Name="SearchBar"
+    Placeholder="Search"
+    PlaceholderColor="Gray"
+    BackgroundColor="White"
+    TextColor="Black"
+    FontSize="16"
+    FontAttributes="Bold"
+    HorizontalTextAlignment="Start"
+    CancelButtonColor="Black"
+    IsTextPredictionEnabled="True"
+    SearchButtonPressed="SearchBar_SearchButtonPressed" />
+            </Frame>
+
+            <Button x:Name="GridLayoutButton" Text="Go to Grid Layout" Clicked="GridLayoutButton_Clicked" />
+            <Button x:Name="AbsoluteLayoutButton" Text="Go to Absolute Layout" Clicked="AbsoluteLayoutButton_Clicked" />
+            <Button Text="Flex Layout" x:Name="FlexLayout" Clicked="FlexLayout_Clicked" />
+            <Button Text="Common Controls" x:Name="CommonControls" Clicked="CommonControls_Clicked" />
+            <Button Text="Action Control" x:Name="ActionControls" Clicked="ActionControls_Clicked" />
+            <ImageButton Source="dotnet_bot.png" x:Name="ImageButton1" Clicked="ImageButton1_Clicked" BorderColor="Grey" CornerRadius="20" BackgroundColor="WhiteSmoke" BorderWidth="4" HeightRequest="100" />
+            <Button Text="Form Page" x:Name="FormPage" Clicked="FormPage_Clicked"  />
+            <Button Text="Carousel View Page" x:Name="CarouselViewPage" Clicked="CarouselViewPage_Clicked" />
+            <Button Text="Last Demo Button" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Experimental.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Experimental.Pages"
+    xmlns:local2="clr-namespace:Experimental"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.FlyoutHeaderBehavior="CollapseOnScroll"
+    Title="Experimental">
+
+    <Shell.FlyoutHeader>
+        <Grid BackgroundColor="#1E1E2F" Padding="20">
+            <StackLayout>
+                <Image Source="profile.png" HeightRequest="60" WidthRequest="60" HorizontalOptions="Center"/>
+                <Label Text="John Doe" FontSize="18" TextColor="White" HorizontalOptions="Center"/>
+                <Label Text="john@example.com" FontSize="14" TextColor="LightGray" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Grid>
+    </Shell.FlyoutHeader>
+
+    <ShellContent
+        Title="Home"
+        Icon="https://shorturl.at/36kjo"
+        ContentTemplate="{DataTemplate local:HomePage}"
+        Route="HomePage" />
+
+    <ShellContent Title="MainPage" Icon="https://shorturl.at/GmOXf" ContentTemplate="{DataTemplate local2:MainPage}" Route="MainPage"/>
+    <ShellContent Title="ContentPage" Icon="https://shorturl.at/rrsnP" ContentTemplate="{DataTemplate local:ContentPage1}" Route="ContentPage1"/>
+
+</Shell>

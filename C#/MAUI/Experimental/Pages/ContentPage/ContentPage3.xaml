@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Experimental.Pages.ContentPage3"
+             Title="ContentPage3"
+             BackgroundColor="LightGreen">
+    <VerticalStackLayout>
+        <Label 
+            Text="Content Page - 3" Margin="20" FontSize="20"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button x:Name="GotocontentPage2" Clicked="Go_To_ContentPage2_Clicked" Text="Lets Go to Content Page 2" TextColor="White" BackgroundColor="LightSkyBlue" HorizontalOptions="Center" Margin="50"/>
+    </VerticalStackLayout>
+</ContentPage>

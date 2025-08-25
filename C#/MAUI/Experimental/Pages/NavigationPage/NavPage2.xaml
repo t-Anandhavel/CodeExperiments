@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Experimental.Pages.NavigationPage.NavPage2"
+             Title="NavPage2"
+             BackgroundColor="Blue">
+    <VerticalStackLayout>
+        <Label 
+            Text="Welcome to Navigation Page 2"
+            Margin="25"
+            FontSize="20"
+            TextColor="White"
+            FontAttributes="Bold"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+
+        <Button Text="Move to page 2" Margin="25" FontSize="20" FontAttributes="Bold" BackgroundColor="Green" Clicked="NavPage3" />
+        <Button Text="Move to page 2" Margin="25" FontSize="20" FontAttributes="Bold" BackgroundColor="Grey" Clicked="NavPage1" />
+    </VerticalStackLayout>
+</ContentPage>

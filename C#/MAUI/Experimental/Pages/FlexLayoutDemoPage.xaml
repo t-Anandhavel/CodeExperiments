@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Experimental.Pages.FlexLayoutDemoPage"
+             Title="FlexLayoutDemoPage">
+    <FlexLayout Direction="Column">
+        <!--<Button Text="Button 1" FlexLayout.Grow="1" BackgroundColor="Beige" />
+        <Button Text="Button 2" FlexLayout.Basis="200" FlexLayout.Order="-1"/>-->
+
+        <Label BackgroundColor="DarkGray" TextColor="Black" FontSize="16" HorizontalTextAlignment="Center" Text="Welcome to Maui learnings!!" />
+
+        <FlexLayout FlexLayout.Grow="1" Direction="Row">
+            <VerticalStackLayout BackgroundColor="Green" FlexLayout.Basis="50"></VerticalStackLayout>
+            <VerticalStackLayout BackgroundColor="White" FlexLayout.Grow="1">
+                <Label Text="This is content Area!!" TextColor="Red" FontSize="Large" />
+            </VerticalStackLayout>
+            <VerticalStackLayout BackgroundColor="Green" FlexLayout.Basis="50"></VerticalStackLayout>
+        </FlexLayout> 
+        <Label Text="Thank You" FontSize="20" BackgroundColor="DarkGrey" HorizontalTextAlignment="Center" />
+    </FlexLayout>
+</ContentPage>
